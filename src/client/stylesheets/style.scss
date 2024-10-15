@@ -1,3 +1,5 @@
+@use "sass:color";
+
 /*
  * Copyright (C) 2014-2015, 2021-2022  Ben Ockmore
  *               2015                  Leo Verto
@@ -18,15 +20,15 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-@import "lobes4/scss/variables.scss";
+@import "~lobes5/scss/variables.scss";
 
 $navbar-light-color: $gray-400;
 $brand-secondary: $bookbrainz;
-$disabled-bg: lighten(desaturate($bookbrainz,10%),42%);
-$disabled-color: lighten($disabled-bg,15%);
+$disabled-bg: color.adjust(desaturate($bookbrainz,10%),$lightness: 42%, $space: hsl);
+$disabled-color: color.adjust($disabled-bg,$lightness: 15%, $space: hsl);
 
 
-@import "lobes4/scss/bootstrap.scss";
+@import "~lobes5/scss/bootstrap.scss";
 @import "react-datepicker/dist/react-datepicker.css";
 @import "./external-services.scss";
 
